@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="kinoapp">
+<head>
+    <title>HELLO JSP</title>
+    <!--VK-->
+    <!--<script src="http://vkontakte.ru/js/api/xd_connection.js?2" type="text/javascript"></script>-->
+    <!--CNDs-->
+    <script language="JavaScript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
+    <script language="JavaScript" src="http://underscorejs.org/underscore.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <script language="JavaScript" src="/js/search.js"></script>
+    <script language="JavaScript" src="/js/comment.js"></script>
+    <script language="JavaScript" src="/js/contest.js"></script>
+    <script language="JavaScript" src="/js/film.js"></script>
+    <script language="JavaScript" src="/js/app.js"></script>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div>
+            <ul class="nav container row">
+                <li><a class="brand" href="#/search">
+                    <h3>KINO</h3><h3>MACHINA</h3></a>
+                </li>
+                <li>
+                     <a href="#/edit/film">Фильм</a>
+                     <a href="#/comment">Комментарий</a>
+                </li>
+            </ul>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="container inverse" ng-view>
+
+</div>
+
+</body>
+</html>
