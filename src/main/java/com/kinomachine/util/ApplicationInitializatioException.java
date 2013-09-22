@@ -11,12 +11,4 @@ public class ApplicationInitializatioException extends RuntimeException{
     public ApplicationInitializatioException(String message, Throwable cause) {
         super(message, cause);
     }
-
-    public ApplicationInitializatioException(Throwable cause) {
-        super(cause);
-    }
-
-    public ApplicationInitializatioException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-    }
 }

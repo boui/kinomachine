@@ -1,0 +1,47 @@
+<div class="span9" >
+
+    <div class="container-fluid" style="background-color: #696969; border-radius: 20px; border-style: dotted">
+        <div class="row-fluid">
+        <span ng-repeat="film in films" class="span3" >
+
+            <span class="" ng-repeat="url in film.urls" >
+
+                <span class="label label-inverse">
+                    <span ng-repeat="quality in film.availableQuality"> {{quality}} </span>
+                </span>
+
+                <span class="badge badge-default " >
+                    <span class="">{{film.productionYear}}</span>
+                </span>
+
+                <img ng-src="{{url}}" />
+            </span>
+
+            <span class="">
+                <h4 style="font-family: 'Gudea', sans-serif" ng-repeat="name in film.names">{{name}}</h4>
+            </span>
+
+
+
+            <span ng-switch on="film.hasDirectorsCut">
+                <span ng-switch-when="true">
+                     <span class="label label-important">+реж.</span>
+                </span>
+            </span>
+
+
+            <span class="badge badge-success">
+                <img height="16px" width="16px" src="https://cdn1.iconfinder.com/data/icons/pidginsmilies/good.png"/>
+                <span class="">{{film.allTimesRate}}</span>
+            </span>
+
+
+            <h3 class="label label-inverse"
+                  ng-repeat="t in film.tag">{{t}}</h3>
+        </span>
+        </div>
+    </div>
+</div>
+
+
+

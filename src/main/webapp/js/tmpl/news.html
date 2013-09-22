@@ -1,0 +1,19 @@
+
+
+<span class="span3">
+    <h1 >Последние новости</h1>
+    <span ng-repeat="message in messages">
+        <span ng-switch on="message.details.type">
+              <span ng-switch-when="SYS">
+                  <span class="label label-info">
+                    {{ message.title }}
+                  </span>
+              </span>
+                <span ng-switch-when="A">
+                  <span class="label label-success">
+                    {{ message.title }}
+                  </span>
+              </span>
+          </span>
+    </span>
+</span>

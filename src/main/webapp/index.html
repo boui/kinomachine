@@ -1,43 +1,102 @@
 <!DOCTYPE html>
 <html ng-app="kinoapp">
 <head>
-    <title>HELLO JSP</title>
-    <!--VK-->
-    <!--<script src="http://vkontakte.ru/js/api/xd_connection.js?2" type="text/javascript"></script>-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What i want to watch</title>
     <!--CNDs-->
     <script language="JavaScript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
-    <script language="JavaScript" src="http://underscorejs.org/underscore.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.js"></script>
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 
-    <script language="JavaScript" src="/js/search.js"></script>
-    <script language="JavaScript" src="/js/comment.js"></script>
-    <script language="JavaScript" src="/js/contest.js"></script>
-    <script language="JavaScript" src="/js/film.js"></script>
-    <script language="JavaScript" src="/js/app.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+    <link href='http://fonts.googleapis.com/css?family=Gudea:400,700' rel='stylesheet' type='text/css'>
+    <link href='/css/growl.css' rel='stylesheet' type='text/css'>
+
+     <style>
+         body {
+             background-color: #CCC;
+         }
+     </style>
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
+
+
+<button class="btn btn-danger" ng-click="doClickDanger(true)" ng-controller="AuthorizationController">Danger </button>
+<button class="btn btn-info" ng-click="doClickInfo(false)" ng-controller="AuthorizationController"> Info</button>
+<button class="btn btn-inverse" ng-click="doClickInverse(false)" ng-controller="AuthorizationController">Inverse </button>
+<button class="btn btn-warning" ng-click="doClickWarning(false)" ng-controller="AuthorizationController">Warning </button>
+<button class="btn btn-success" ng-click="doClickSuccess(false)" ng-controller="AuthorizationController">Success </button>
+<span style="padding: 30px 0"> | </span>
+<button class="btn btn-success" ng-click="findInnerHeight()" ng-controller="AuthorizationController">Inner height</button>
+<button class="btn btn-success" ng-click="showNavAlertsList()" ng-controller="AuthorizationController">Check alerts</button>
+
+<div class="navbar navbar-inverse ">
     <div class="navbar-inner">
-        <div>
-            <ul class="nav container row">
-                <li><a class="brand" href="#/search">
-                    <h3>KINO</h3><h3>MACHINA</h3></a>
-                </li>
-                <li>
-                     <a href="#/edit/film">Фильм</a>
-                     <a href="#/comment">Комментарий</a>
-                </li>
-            </ul>
-            <!--/.nav-collapse -->
+        <div class="container">
+            <a class="brand" href="#">Киномашина</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="active"><a href="#">Все фильмы</a></li>
+                    <li><a href="#about">Игра</a></li>
+                    <li><a href="#contact">Новенькое</a></li>
+                </ul>
+                <authorization></authorization>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="container inverse" ng-view>
-
+<div class="container-fluid">
+    <div class="row-fluid" >
+        <news></news>
+        <film-list></film-list>
+    </div>
 </div>
+
+
+
+
+<!--<div class="container">-->
+    <!--<div class="row">-->
+        <!--<span class="span4">-->
+<!--<div class="container-fluid">-->
+    <!--<div class="row-fluid " id="rrow">-->
+
+        <!--<span class="span10">-->
+            <!--<a href="#">HELLO</a>-->
+        <!--</span>-->
+
+        <!--<span class="span2">-->
+                <!--<span class="dropdown">-->
+                    <!--<a class="dropdown-toggle"-->
+                       <!--data-toggle="dropdown"-->
+                       <!--href="#">-->
+                        <!--<b class="caret"></b>-->
+                    <!--</a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li>Hello</li>-->
+                    <!--</ul>-->
+                <!--</span>-->
+
+        <!--</span>-->
+    <!--</div>-->
+
+<!--</div>-->
+            <!--</span>-->
+<!--</div>-->
+<!--</div>-->
+
+
+
+
+
+<footer>
+
+    <script src="/js/growl.js"></script>
+    <script language="JavaScript" src="/js/controllers.js"></script>
+    <script language="JavaScript" src="/js/app.js"></script>
+</footer>
 
 </body>
 </html>

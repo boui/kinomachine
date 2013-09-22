@@ -1,6 +1,7 @@
-<div ng-repeat="film in films">
-    <span class="" ng-repeat="name in film.names">
-        <p>{{name}}</p></span>
+ <div ng-repeat="film in films">
+    <span>
+        <p  ng-repeat="name in film.names">{{name}}</p>
+    </span>
     <span class="">{{film.code}}</span>
     <span class="">{{film.type}}</span>
 
@@ -9,13 +10,13 @@
     <span class="">{{film.allTimesRate}}</span>
     <span class="" ng-repeat="t in film.tag">{{t}}</span>
 
-    <span class="" ng-repeat="actor in film.actors">
-        <a>{{actor}}</a>
+    <span class="" >
+        <a ng-repeat="actor in film.actors" >{{actor}}</a>
     </span>
 
     <span class="">{{film.productionYear}}</span>
     <span class="">{{film.description}}</span>
 
     <span class="" ng-repeat="url in film.urls">
-    <img src="{{url}}"/></span>
+    <img ng-src="{{url}}"/></span>
 </div>
