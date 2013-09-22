@@ -33,12 +33,17 @@ growlModule.controller('GrowlController', ['$scope', '$timeout', 'growl', 'model
                 currentTimeout = $timeout(go, interval);
             }
         }
-
-    }])
+    }]);
 
 growlModule.provider("$growl", function() {
 
-        var navAlertsList = new Object();;
+        var navAlertsList = new Object();
+
+        function navAlertsListLength(){
+            var keys = Object.keys(navAlertsList);
+            var values = keys.map(function(v) { return navAlertsList[v]; });
+            return values.length;
+        }
 
         // The default options for all growls.
         var defaults = {
@@ -80,6 +85,7 @@ growlModule.provider("$growl", function() {
             // The `open(templateUrl, controller)` method opens the growl.
             // Use the `templateUrl` and `controller` arguments if specifying them at dialog creation time is not desired.
             Growl.prototype.open = function(templateUrl, controller) {
+
                 var self = this,
                     options = this.options;
 
@@ -100,9 +106,23 @@ growlModule.provider("$growl", function() {
                     }
 
                     $compile(self.growlEl)($scope);
+
                     self.growlEl.uuid = options.uuid;
                     self.growlEl.type = options.type;
-                    self._addElementsToContainer();
+
+                    if ( navAlertsListLength() <= 5 ){
+
+//                        if($(".growl-notice-wrapper").hasClass(".mCustomScrollbar")){
+//                            $(".growl-notice-wrapper").mCustomScrollbar("update");
+//                        } else {
+//                            $(".growl-notice-wrapper").css("height", "200px");
+//                            $(".growl-notice-wrapper").mCustomScrollbar({
+//                                mouseWheel: true
+//                            });
+//
+//                        }
+                        self._addElementsToContainer();
+                    }
                 });
 
                 this.deferred = $q.defer();
@@ -140,7 +160,6 @@ growlModule.provider("$growl", function() {
             Growl.prototype._fade = function(params) {
                 var self = this;
                 var e = this.growlEl;
-
 
                 params = params || {};
                 var fade = (typeof(params.fade) != 'undefined') ? params.fade : true;
